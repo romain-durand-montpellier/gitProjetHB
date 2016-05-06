@@ -34,10 +34,30 @@ public class Main {
 			System.out.println ("Entrez un nombre: ");
 			number = reader.nextInt();
 			
-			
-			if(number > minNumber){
-				number1 = number;
+			if (number1 > -2 && number2 > -2 && number3 > -2){
+				if(number > number1){//if higher than number1
+					if (number > number2) {//and higher than number2
+						if (number > number3) {//and higher than number3
+							number3 = number;//number3 become number
+						}
+						else number2=number;//else (not higher than number3) number2 become number
+					}
+					else number1=number;//else (not higher than number3 or 2, number1 become number
+				}
+				else if (number > number2) {//else if not higher than number1 but higher than number2
+					if (number > number3) {//and higher than number3
+						number3=number;//number become number2
+					}
+					else number2=number;//else (not higher than number3) number2 become number
+				}
+				else if (number > number3) {//else if not higher than number1 and number2 but higher than number3
+					number3=number;
+				}
 			}
+			if (number1 == -2) number1 = number;
+			else if (number2 == -2) number2 = number;
+			else if (number3 == -2) number3 = number;
+			
 			
 			if(number1 > 0){ //if number > 0 print it
 				System.out.println (number1);
@@ -57,7 +77,7 @@ public class Main {
 		  }
 		
 		}while (number != -1);
-		
+		System.out.println("A bientot");
 		return (number);
 	}
 }
